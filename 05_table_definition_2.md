@@ -1,9 +1,13 @@
 # テーブル定義書2
 ## 全体
-- 指摘事項
+- sellsとsell_detailsテーブルの親子関係が逆
 
-## テーブル名
-- 指摘事項
+## cart items
+- テーブル名をcart items → cart_items
+- カラム名をbuy num → buy_number
+
+## sell_details
+- product_idにFKがついていない
 
 # 注意
 * マークダウン形式で記入してください。
