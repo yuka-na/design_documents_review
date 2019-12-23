@@ -1,9 +1,25 @@
 # テーブル定義書1
 ## 全体
-- 指摘事項
+- カラム名に自身のテーブル名を含まないようしてください。
+- user_l_namemなど略語を使わないようにしましょう。
 
-## テーブル名
-- 指摘事項
+## Admin
+- 主キーがない
+
+## Songs
+- songのidがない
+
+## Labels
+- labelのidがない
+
+## Artists
+- artistのidがない
+
+## Genres
+- genreのidがない
+
+## Cart_items
+- cart_itemのidがない
 
 # 注意
 * マークダウン形式で記入してください。
