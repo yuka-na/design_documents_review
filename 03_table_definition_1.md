@@ -5,21 +5,41 @@
 
 ## Admin
 - 主キーがない
+- idにAUTO INCREMENTを適用してない
+
+## Songs
+- 退会ステータスのデータ型が違うのとtrueとfalseが何を表すか不明
+
+## Products
+- FKがない
+- 在庫ステータスのデータ型が違うのと何を表しているかわからない
 
 ## Songs
 - songのidがない
+- 曲名のデータ型がintegerになってる
 
 ## Labels
 - labelのidがない
 
 ## Artists
 - artistのidがない
+- アーティスト名のデータ型がintegerになってる
 
 ## Genres
 - genreのidがない
+- ジャンル名のデータ型がintegerになってる
 
 ## Cart_items
 - cart_itemのidがない
+- 商品IDのデータ型が記載されてない
+
+## Buy_details
+- テーブル名やそれに関するカラムが管理者視点になっていない
+
+## Buy
+- テーブル名やそれに関するカラムが管理者視点になっていない
+- 購入日カラムがいらない
+- 支払い方法の詳細が不明
 
 # 注意
 * マークダウン形式で記入してください。
