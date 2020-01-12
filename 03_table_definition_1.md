@@ -4,6 +4,14 @@
 - テーブル名が全部大文字、スネークケースで書かれていない
 - カラム命名規則(adminテーブルのadmin_emailカラムではなくadminテーブルのemaiカラム)
 - 複数単語のカラムがスネークケースで書かれていない(スペースまたは１単語扱いで書かれている)
+<!-- 追記-->
+- created_at, updated_atカラムの説明が全て「ユーザー登録日時」, 「ユーザー更新日時」となっている
+- 在庫数は実際の在庫と入荷の数量が同一に格納される恐れがあるので入荷用の情報を管理できるテーブルを作成すると良い
+
+<!-- 追記-->
+## Admin
+- テーブル名は複数形
+- admin_idがPKになっていない
 
 ## user
 - l_name,f_name等意味合いを省略して書くとカラムの役割がわかりづらい
@@ -17,6 +25,9 @@
 - genre_id,label_id,artist_idにFKがない
 - CD画像カラム、refileを使用するなら後ろにidをつけて型をintegerにする(carrierwaveならこれで可能)
 - notax_priceカラムはno_tax_priceにすると良い、というかここは単純にpriceでいいと思う
+<!-- 追記-->
+- stock_statusは在庫数がわかればわかるので不要。
+- stockは（入荷数-購買数）で計算できるので不要。
 
 ## discs
 - productのidがあること自体はあっているがそうなるとproductにdisc_idがあるのでおかしくなる
@@ -25,23 +36,31 @@
 
 ## songs
 - 曲順を識別するカラムがない
+- songカラムをnameに
 
 ## labels
+- レーベルは商品を複数所持している関係性のためproduct_idは必要ない
 - products_idではなくproduct_id
-labelカラムをnameに
+- labelカラムをnameに
 
 ## artists
+- アーティストは商品を複数所持している関係性のためproduct_idは必要ない
 - products_idではなくproduct_id
-artistカラムをnameに
+- artistカラムをnameに
+- artistカラムがinteger型になっている
 
 ## genres
+- ジャンルは商品を複数所持している関係性のためproduct_idは必要ない
 - products_idではなくproduct_id
-gerneカラムをnameに
+- genreカラムをnameに
+- genreカラムがinteger型になっている
+- テーブル名は複数形、スネークケース小文字
 
-## cart_items
+## cart_item
 - products_idではなくproduct_id、データ型無し
 - 小計はCD情報から引っ張れるのでいらない
 - buy numの命名がわかりづらい
+- テーブル名は複数形、スネークケース小文字
 
 ## buy_details
 - 管理者目線なのでテーブル名が不適切
@@ -59,6 +78,7 @@ gerneカラムをnameに
 
 **研修担当レビュー**
 <font color="Red">再提出の際はこのレビューを残しておいてください。</font>
+
 ## 全体
 - created_at, updated_atカラムの説明が全て「ユーザー登録日時」, 「ユーザー更新日時」となっていますが、問題ありませんか？
 
