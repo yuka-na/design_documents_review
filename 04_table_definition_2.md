@@ -30,3 +30,33 @@
 ## sellsテーブル
 - 購入詳細IDを持っている。これではこちらが多になってしまう。
 - 支払い方法、支払い合計はもっとわかりやすい名前にすべき。
+
+
+# フィードバック
+[add]→付け加えなければいけないところ
+[fix]→修正が必要なところ
+[comment]→その他コメント（修正ではないけど、確認して欲しいポイントです）
+
+## 全体
+- [add]各テーブルにidというカラムがない。（テーブル名_idという名前だと不適切）
+
+## admins
+- admin_id(id)にindexがない。
+
+## users
+- [fix]members_statusはinteger/enumで問題ありません。member_statusのステータスは、何を意味しているでしょうか？
+
+## ships
+- [add] ship_idにindexがない。
+
+## products
+- [add] stockは入荷と売上履歴から算出できるので不要です。
+- [add] stock_statusはstockの個数から判別できるので同じく不要。
+- [add] ジャケット画像のデフォルト値への言及をお願いします。
+
+## discs
+- [add] disc_numのdisc_は不要。
+- [add] products_idは単数形なのでproduct_idにする。productが親です。
+
+## sell
+- [add] totalについて詳しい説明をお願い致します。
