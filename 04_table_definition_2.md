@@ -1,19 +1,22 @@
 # テーブル定義書2
 
+## 全体
+- 主キーはidでよい。（テーブル名_idという名前は不適切）
+- 主キーにindexが抜けているテーブルがある。
+- テーブル名と同じ接頭辞がついているカラム名がある。user_telなど。
+
 ## adminsテーブル
-- カラム名にadminという接頭辞は必要ない。
+- deviseで使われるデフォルトのメールアドレス、パスワードのカラム名はemail,encrypted_passwordとなる。
 
 ## usersテーブル
 - user_l_name,user_f_nameではなにを示しているかわからない。
-- カラム名にuserという接頭辞は必要ない。
 - member_statusのデータ型がinteger/enumとなっている。true,falseで管理するなら、boolean形にすべき。またその際はenumを使う必要がない。
-
-## shipsテーブル
-- カラム名にshipという接頭辞は必要ない。
+- deviseで使われるデフォルトのメールアドレス、パスワードのカラム名はemail,encrypted_passwordとなる。
 
 ## productsテーブル
 - products_idになっている。命名規則的にproduct_idにすべき。
-- ジャケット画像にrefileを使うのなら、備考欄に記述すべき。
+- ジャケット画像にrefileを使うのなら、備考欄に記述すべき。default値はno_image.jpgなど。
+- 入荷による在庫管理ができていない。stock,stock_statusは不要。
 
 ## songs,labels,artists,genresテーブル（共通）
 - ～名のカラム名は~_nameという風にわかりやすい名前にすべき。
@@ -29,7 +32,7 @@
 
 ## sellsテーブル
 - 購入詳細IDを持っている。これではこちらが多になってしまう。
-- 支払い方法、支払い合計はもっとわかりやすい名前にすべき。
+- 支払い方法、支払い合計はもっとわかりやすい名前にすべき。pay_method, total_priceなど
 
 
 # フィードバック
@@ -44,7 +47,7 @@
 - admin_id(id)にindexがない。
 
 ## users
-- [fix]members_statusはinteger/enumで問題ありません。member_statusのステータスは、何を意味しているでしょうか？
+- [fix]members_statusはinteger/enumで問題ありません。member_statusのステータスは、何を意味しているでしょうか？→よくわかりませんでした。
 
 ## ships
 - [add] ship_idにindexがない。
